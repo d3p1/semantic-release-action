@@ -1,19 +1,32 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+##
+# @description Action to automate release processes using semantic-release
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
 
-# Define your inputs here.
-inputs:
-  milliseconds:
-    description: 'Your input description here'
-    required: true
-    default: '1000'
+##
+# @note Define action general information
+##
+name: 
+  'Releasify'
+description: 
+  'A GitHub Action for automated releases, changelogs, and package publishing with semantic-release'
+author: 
+  'Cristian Marcelo de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)'
 
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+##
+# @note Define branding icon
+##
+branding:
+  icon: 
+    box
+  color: 
+    black
 
+##
+# @note Define action entry point
+##
 runs:
-  using: node16
-  main: dist/index.js
+  using: 
+    node16
+  main: 
+    dist/index.js
