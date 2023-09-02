@@ -3,9 +3,8 @@
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  * @link        https://semantic-release.gitbook.io/semantic-release/
  */
-// prettier-ignore
-import * as core  from '@actions/core';
-import {execSync} from 'child_process';
+import * as core from '@actions/core';
+import {exec} from '@actions/exec';
 
 /**
  * Action entry point
@@ -16,28 +15,24 @@ export async function run(): Promise<void> {
     /**
      * @note Install `semantic-release` and needed plugins
      */
-    // prettier-ignore
-    execSync(
+    exec(
       `npm i \
-    semantic-release \
-    @semantic-release/changelog \
-    @semantic-release/git`, {
-      stdio: 'inherit'
-    });
+       semantic-release \
+       @semantic-release/changelog \
+       @semantic-release/git`
+    );
 
     /**
      * @note Exec `semantic-release` with required configuration
      */
-    // prettier-ignore
-    execSync(
+    exec(
       `npx semantic-release \
-    --branches "main" \
-    --plugins "@semantic-release/commit-analyzer,\
-    @semantic-release/release-notes-generator,\
-    @semantic-release/changelog,\
-    @semantic-release/npm,@semantic-release/git"`, {
-      stdio: 'inherit'
-    });
+       --branches "main" \
+       --plugins "@semantic-release/commit-analyzer,\
+       @semantic-release/release-notes-generator,\
+       @semantic-release/changelog,\
+       @semantic-release/npm,@semantic-release/git"`
+    );
   } catch (error) {
     /**
      * @note Fail the workflow run if an error occurs
