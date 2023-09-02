@@ -1,29 +1,55 @@
-import * as core from '@actions/core'
-import { wait } from './wait'
+/**
+ * @description Automate release processes using `semantic-release`
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+ * @link        https://semantic-release.gitbook.io/semantic-release/
+ */
+// prettier-ignore
+import * as core  from '@actions/core';
+import {execSync} from 'child_process';
 
 /**
- * The main function for the action.
- * @returns {Promise<void>} Resolves when the action is complete.
+ * Action entry point
+ * @returns {Promise<void>} Resolves when the action is completed
  */
 export async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
+    /**
+     * @note Install `semantic-release` and needed plugins
+     */
+    // prettier-ignore
+    execSync(
+      `npm i \
+    semantic-release \
+    @semantic-release/changelog \
+    @semantic-release/git`, {
+      stdio: 'inherit'
+    });
 
-    // Debug logs are only output if the `ACTIONS_STEP_DEBUG` secret is true
-    core.debug(`Waiting ${ms} milliseconds ...`)
-
-    // Log the current timestamp, wait, then log the new timestamp
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    // Set outputs for other workflow steps to use
-    core.setOutput('time', new Date().toTimeString())
+    /**
+     * @note Exec `semantic-release` with required configuration
+     */
+    // prettier-ignore
+    execSync(
+      `npx semantic-release \
+    --branches "main" \
+    --plugins "@semantic-release/commit-analyzer,\
+    @semantic-release/release-notes-generator,\
+    @semantic-release/changelog,\
+    @semantic-release/npm,@semantic-release/git"`, {
+      stdio: 'inherit'
+    });
   } catch (error) {
-    // Fail the workflow run if an error occurs
-    if (error instanceof Error) core.setFailed(error.message)
+    /**
+     * @note Fail the workflow run if an error occurs
+     */
+    if (error instanceof Error) {
+      core.setFailed(error.message);
+    }
   }
 }
 
+/**
+ * @note Execute action
+ */
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
-run()
+run();
