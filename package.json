@@ -2,7 +2,7 @@
   "name": "@d3p1/semantic-release-action",
   "description": "GitHub Actions to automate version management and package publishing",
   "version": "0.0.0",
-  "author": "Cristian Marcelo de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)",
+  "author": "C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)",
   "private": true,
   "homepage": "https://github.com/d3p1/semantic-release-action",
   "repository": {
