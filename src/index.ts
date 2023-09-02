@@ -2,9 +2,10 @@
  * @description Automate release processes using `semantic-release`
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  * @link        https://semantic-release.gitbook.io/semantic-release/
+ * @link        https://semantic-release.gitbook.io/semantic-release/developer-guide/js-api
  */
+import semanticRelease from 'semantic-release';
 import * as core from '@actions/core';
-import {exec} from '@actions/exec';
 
 /**
  * Action entry point
@@ -13,26 +14,31 @@ import {exec} from '@actions/exec';
 export async function run(): Promise<void> {
   try {
     /**
-     * @note Install `semantic-release` and needed plugins
+     * @note Dispatch release
      */
-    exec(
-      `npm i \
-       semantic-release \
-       @semantic-release/changelog \
-       @semantic-release/git`
-    );
+    const result = await semanticRelease({
+      branches: ['main'],
+      tagFormat: '${version}',
+      plugins: [
+        '@semantic-release/commit-analyzer',
+        '@semantic-release/release-notes-generator',
+        '@semantic-release/changelog',
+        '@semantic-release/npm',
+        '@semantic-release/git'
+      ]
+    });
 
     /**
-     * @note Exec `semantic-release` with required configuration
+     * @note Check release
      */
-    exec(
-      `npx semantic-release \
-       --branches "main" \
-       --plugins "@semantic-release/commit-analyzer,\
-       @semantic-release/release-notes-generator,\
-       @semantic-release/changelog,\
-       @semantic-release/npm,@semantic-release/git"`
-    );
+    if (result) {
+      const {commits, nextRelease} = result;
+      core.info(
+        `Published ${nextRelease.type} release version ${nextRelease.version} containing ${commits.length} commits.`
+      );
+    } else {
+      core.info('No release published.');
+    }
   } catch (error) {
     /**
      * @note Fail the workflow run if an error occurs
