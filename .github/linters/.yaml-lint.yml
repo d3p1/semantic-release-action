@@ -1,10 +1,14 @@
+##
+# @description YAML lint
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
 rules:
-  document-end: disable
+  document-end  : disable
   document-start:
-    level: warning
+    level  : warning
     present: false
   line-length:
-    level: warning
-    max: 80
-    allow-non-breakable-words: true
+    level                              : warning
+    max                                : 80
+    allow-non-breakable-words          : true
     allow-non-breakable-inline-mappings: true
