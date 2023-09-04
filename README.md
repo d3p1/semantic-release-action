@@ -1,7 +1,6 @@
 # Create a JavaScript Action Using TypeScript
 
 [![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
-![CI](https://github.com/actions/typescript-action/actions/workflows/ci.yml/badge.svg)
 
 Use this template to bootstrap the creation of a TypeScript action. :rocket:
 
