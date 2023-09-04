@@ -1,4 +1,8 @@
-name: Lint Code Base
+##
+# @description Linter
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
+name: Linter
 
 on:
   pull_request:
@@ -10,9 +14,9 @@ on:
 
 jobs:
   lint:
-    name: Lint Code Base
+    name   : Lint
     runs-on: ubuntu-latest
-
+    
     permissions:
       contents: read
       packages: read
@@ -20,25 +24,24 @@ jobs:
 
     steps:
       - name: Checkout
-        id: checkout
+        id  : checkout
         uses: actions/checkout@v3
 
       - name: Setup Node.js
-        id: setup-node
+        id  : setup-node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: npm
+          cache       : npm
 
-      - name: Install Dependencies
-        id: install
-        run: npm ci
+      - name: Install dependencies
+        id  : install
+        run : npm ci
 
-      - name: Lint Code Base
-        id: super-linter
+      - name: Lint source code
+        id  : super-linter
         uses: super-linter/super-linter/slim@v5
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env :
+          DEFAULT_BRANCH          : main
           TYPESCRIPT_DEFAULT_STYLE: prettier
-          VALIDATE_JSCPD: false
+          VALIDATE_JSCPD          : false

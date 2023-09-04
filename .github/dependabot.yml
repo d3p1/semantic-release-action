@@ -1,16 +1,21 @@
+##
+# @description Dependabot
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
 version: 2
+
 updates:
   - package-ecosystem: github-actions
-    directory: /
-    labels:
+    directory        : /
+    labels           :
       - dependabot
       - actions
     schedule:
       interval: daily
 
   - package-ecosystem: npm
-    directory: /
-    labels:
+    directory        : /
+    labels           :
       - dependabot
       - npm
     schedule:
