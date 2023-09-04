@@ -6,21 +6,38 @@
 ##
 # @note Define action general information
 ##
-name: 
-  'Releasify'
-description: 
-  'A GitHub Action for automated releases, changelogs, and package publishing with semantic-release'
-author: 
-  'Cristian Marcelo de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)'
+name       : 'Releasify'
+description: 'A GitHub Action for automated releases, changelogs, and package publishing with semantic-release'
+author     : 'Cristian Marcelo de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)'
 
 ##
 # @note Define branding icon
 ##
 branding:
-  icon: 
-    box
-  color: 
-    black
+  icon : box
+  color: black
+
+##
+# @note Define inputs
+##
+inputs:
+  ##
+  # @note Branch
+  # @link https://semantic-release.gitbook.io/semantic-release/usage/configuration#branches
+  ##
+  branch:
+    description: 'The branch on which release should happen'
+    required   : true
+    default    : ${{ github.ref_name }}
+
+  ##
+  # @note Tag format
+  # @link https://semantic-release.gitbook.io/semantic-release/usage/configuration#tagformat
+  ##
+  tag-format:
+    description: 'The Git tag format used by semantic-release to identify releases'
+    required   : true
+    default    : '{version}'
 
 ##
 # @note Define action entry point
