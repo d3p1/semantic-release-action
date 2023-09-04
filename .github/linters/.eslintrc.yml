@@ -1,10 +1,14 @@
+##
+# @description ESLint configuration
+# @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+##
 env:
   node: true
-  es6: true
+  es6 : true
   jest: true
 
 globals:
-  Atomics: readonly
+  Atomics          : readonly
   SharedArrayBuffer: readonly
 
 ignorePatterns:
@@ -18,8 +22,8 @@ parser: '@typescript-eslint/parser'
 
 parserOptions:
   ecmaVersion: 2023
-  sourceType: module
-  project:
+  sourceType : module
+  project    :
     - './.github/linters/tsconfig.json'
     - './tsconfig.json'
 
