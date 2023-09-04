@@ -4,15 +4,6 @@
 ##
 
 ##
-# @note Dependency directory
-##
-node_modules
-!node_modules/@actions/core
-!node_modules/semantic-release
-!node_modules/@semantic-release/changelog
-!node_modules/@semantic-release/git
-
-##
 # @note Rest pulled from https://github.com/github/gitignore/blob/master/Node.gitignore
 # @note Logs
 ##
