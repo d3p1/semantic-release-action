@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/d3p1/semantic-release-action/compare/1.0.0...1.1.0) (2023-09-04)
+
+
+### Bug Fixes
+
+* improve tag format value [[#1](https://github.com/d3p1/semantic-release-action/issues/1)] ([ec4f4f8](https://github.com/d3p1/semantic-release-action/commit/ec4f4f8686f471b7de97902b0a1510a71dccd251))
+
+
+### Features
+
+* add customizable values to define the branch and tag format used [[#1](https://github.com/d3p1/semantic-release-action/issues/1)] ([daa5e0b](https://github.com/d3p1/semantic-release-action/commit/daa5e0b7192eb35ccc7caf3c16b2df08c7e002c8))
+
 # 1.0.0 (2023-09-04)
 
 
