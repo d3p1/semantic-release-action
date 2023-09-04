@@ -27,6 +27,6 @@ branding:
 ##
 runs:
   using: 
-    node16
+    node18
   main: 
     dist/index.js
