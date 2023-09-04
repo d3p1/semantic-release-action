@@ -37,7 +37,7 @@ inputs:
   tag-format:
     description: 'The Git tag format used by semantic-release to identify releases'
     required   : true
-    default    : '{version}'
+    default    : '${version}'
 
 ##
 # @note Define action entry point
