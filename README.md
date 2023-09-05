@@ -1,7 +1,9 @@
 <div align=center>
 
-# [RELEASIFY]
+# [SEMANTIC RELEASIFY]
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 [![Basic validation](https://github.com/d3p1/semantic-release-action/actions/workflows/basic-validation.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/basic-validation.yml)
 [![CodeQL](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml)
 
@@ -9,18 +11,18 @@
 
 ## Introduction
 
-A little [GitHub Action](https://docs.github.com/en/actions) to automate version management and package publishing using [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/). 
+A little [GitHub Action](https://docs.github.com/en/actions) for automated releases, changelogs, and package publishing with [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/). 
 
-[`semantic-release`](https://semantic-release.gitbook.io/semantic-release/) already has a [great explained recipe to configure a GitHub Action using its library](https://semantic-release.gitbook.io/semantic-release/recipes/ci-configurations/github-actions). The idea of this [GitHub Action](https://docs.github.com/en/actions) is to ecapsulate a basic [configuration](https://semantic-release.gitbook.io/semantic-release/usage/configuration) with basic [plugins](https://semantic-release.gitbook.io/semantic-release/usage/plugins) to have a handful and easy way to generate/update the project `CHANGELOG`, dispatch a release and publish the related package.
+[`semantic-release`](https://semantic-release.gitbook.io/semantic-release/) already has a [great explained recipe to configure a GitHub Action using its library](https://semantic-release.gitbook.io/semantic-release/recipes/ci-configurations/github-actions). The idea of this [GitHub Action](https://docs.github.com/en/actions) is to ecapsulate a basic [configuration](https://semantic-release.gitbook.io/semantic-release/usage/configuration) with basic [plugins](https://semantic-release.gitbook.io/semantic-release/usage/plugins) to have a handful and easy way to generate/update the project `CHANGELOG`, dispatch a GitHub release and publish the related package.
 
 *(Note: For the moment, [it is only possible to publish to `npm` registries](https://github.com/d3p1/semantic-release-action/issues/7))*
 
 ## Usage
 
-See [`action.yml`](action.yml)
+See [`action.yml`](./action.yml)
 
 ```yaml
-- uses: d3p1/releasify@v1
+- uses: d3p1/semantic-releasify@v1
   with:
     ##
     # @note The branch on which release should happen
@@ -52,10 +54,10 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - uses: d3p1/releasify@v1
+    - uses: d3p1/semantic-releasify@v1
 ```
 
-The `branch` and `tag-format` inputs are optional. If not supplied, the targeted branch and [`${version}` format](https://lodash.com/docs#template) will be used, respectively.
+The `branch` and `tag-format` inputs are optional. If not supplied, the targeted branch and [`v${version}` format](https://lodash.com/docs#template) will be used, respectively.
 
 It is necessary to set the described [`permissions`](https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs), so the bot can execute the following actions:
 
@@ -71,7 +73,7 @@ Detailed changes for each release are documented in [`CHANGELOG.md`](./CHANGELOG
 
 ## License
 
-This work is published under [MIT License](license).
+This work is published under [MIT License](./LICENSE).
 
 ## Author
 
