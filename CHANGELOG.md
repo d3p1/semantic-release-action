@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/d3p1/semantic-release-action/compare/v1.0.0...v1.1.0) (2023-09-05)
+
+
+### Features
+
+* add dependabot upgrade [[#1](https://github.com/d3p1/semantic-release-action/issues/1)] ([c877492](https://github.com/d3p1/semantic-release-action/commit/c8774925d9f971c727ac79fc07d1c3a734564bf6))
+
 # 1.0.0 (2023-09-05)
 
 
