@@ -1,6 +1,6 @@
 /**
  * @description Configuration for `commitlint` parser presets
- * @author      Cristian Marcelo de Picciotto <d3p1@d3p1.dev>
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  * @note        Add ticket information
  * {@link       https://commitlint.js.org/#/reference-configuration?id=parser-presets}
  */
