@@ -26,6 +26,7 @@ export async function run(): Promise<void> {
         '@semantic-release/release-notes-generator',
         '@semantic-release/changelog',
         '@semantic-release/npm',
+        '@semantic-release/github',
         '@semantic-release/git'
       ]
     });
