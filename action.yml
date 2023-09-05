@@ -37,13 +37,11 @@ inputs:
   tag-format:
     description: 'The Git tag format used by semantic-release to identify releases'
     required   : false
-    default    : '${version}'
+    default    : 'v${version}'
 
 ##
 # @note Define action entry point
 ##
 runs:
-  using: 
-    node16
-  main: 
-    dist/index.js
+  using: node16
+  main : dist/index.js
