@@ -1,201 +1,82 @@
-# Create a JavaScript Action Using TypeScript
+<div align=center>
 
-[![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
+# [RELEASIFY]
 
-Use this template to bootstrap the creation of a TypeScript action. :rocket:
+[![Linter](https://github.com/d3p1/semantic-release-action/actions/workflows/linter.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/linter.yml)
+[![CodeQL](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml)
 
-This template includes compilation support, tests, a validation workflow,
-publishing, and versioning guidance.
+</div>
 
-If you are new, there's also a simpler introduction in the
-[Hello world JavaScript action repository](https://github.com/actions/hello-world-javascript-action).
+## Introduction
 
-## Create Your Own Action
+A little [GitHub Action](https://docs.github.com/en/actions) to automate version management and package publishing using [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/). 
 
-To create your own action, you can use this repository as a template! Just
-follow the below instructions:
+[`semantic-release`](https://semantic-release.gitbook.io/semantic-release/) already has a [great explained recipe to configure a GitHub Action using its library](https://semantic-release.gitbook.io/semantic-release/recipes/ci-configurations/github-actions). The idea of this [GitHub Action](https://docs.github.com/en/actions) is to ecapsulate a basic [configuration](https://semantic-release.gitbook.io/semantic-release/usage/configuration) with basic [plugins](https://semantic-release.gitbook.io/semantic-release/usage/plugins) to have a handful and easy way to generate/update the project `CHANGELOG`, dispatch a release and publish the related package.
 
-1. Click the **Use this template** button at the top of the repository
-1. Select **Create a new repository**
-1. Select an owner and name for your new repository
-1. Click **Create repository**
-1. Clone your new repository
-
-## Initial Setup
-
-After you've cloned the repository to your local machine or codespace, you'll
-need to perform some initial setup steps before you can develop your action.
-
-> [!NOTE]
->
-> You'll need to have a reasonably modern version of
-> [Node.js](https://nodejs.org) handy. If you are using a version manager like
-> [`nodenv`](https://github.com/nodenv/nodenv) or
-> [`nvm`](https://github.com/nvm-sh/nvm), you can run `nodenv install` in the
-> root of your repository to install the version specified in
-> [`package.json`](./package.json). Otherwise, 16.x or later should work!
-
-1. :hammer_and_wrench: Install the dependencies
-
-   ```bash
-   npm install
-   ```
-
-1. :building_construction: Package the TypeScript for distribution
-
-   ```bash
-   npm run bundle
-   ```
-
-1. :white_check_mark: Run the tests
-
-   ```bash
-   $ npm test
-
-   PASS  ./index.test.js
-     ✓ throws invalid number (3ms)
-     ✓ wait 500 ms (504ms)
-     ✓ test runs (95ms)
-
-   ...
-   ```
-
-## Update the Action Metadata
-
-The [`action.yml`](action.yml) file defines metadata about your action, such as
-input(s) and output(s). For details about this file, see
-[Metadata syntax for GitHub Actions](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions).
-
-When you copy this repository, update `action.yml` with the name, description,
-inputs, and outputs for your action.
-
-## Update the Action Code
-
-The [`src/`](./src/) directory is the heart of your action! This contains the
-source code that will be run when your action is invoked. You can replace the
-contents of this directory with your own code.
-
-There are a few things to keep in mind when writing your action code:
-
-- Most GitHub Actions toolkit and CI/CD operations are processed asynchronously.
-  In `index.ts`, you will see that the action is run in an `async` function.
-
-  ```javascript
-  import * as core from '@actions/core';
-  ...
-
-  async function run() {
-    try {
-        ...
-    }
-    catch (error) {
-      core.setFailed(error.message);
-    }
-  }
-
-  run()
-  ```
-
-  For more information about the GitHub Actions toolkit, see the
-  [documentation](https://github.com/actions/toolkit/blob/master/README.md).
-
-So, what are you waiting for? Go ahead and start customizing your action!
-
-1. Create a new branch
-
-   ```bash
-   git checkout -b releases/v1
-   ```
-
-1. Replace the contents of `src/` with your action code
-1. Add tests to `__tests__/` for your source code
-1. Format, test, and build the action
-
-   ```bash
-   npm run all
-   ```
-
-   > [!WARNING]
-   >
-   > This step is important! It will run [`ncc`](https://github.com/vercel/ncc)
-   > to build the final JavaScript action code with all dependencies included.
-   > If you do not run this step, your action will not work correctly when it is
-   > used in a workflow. This step also includes the `--license` option for
-   > `ncc`, which will create a license file for all of the production node
-   > modules used in your project.
-
-1. Commit your changes
-
-   ```bash
-   git add .
-   git commit -m "My first action is ready!"
-   ```
-
-1. Push them to your repository
-
-   ```bash
-   git push -u origin releases/v1
-   ```
-
-1. Create a pull request and get feedback on your action
-1. Merge the pull request into the `main` branch
-
-Your action is now published! :rocket:
-
-For information about versioning your action, see
-[Versioning](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
-in the GitHub Actions toolkit.
-
-## Validate the Action
-
-You can now validate the action by referencing it in a workflow file. For
-example, [`ci.yml`](./.github/workflows/ci.yml) demonstrates how to reference an
-action in the same repository.
-
-```yaml
-steps:
-  - name: Checkout
-    id: checkout
-    uses: actions/checkout@v3
-
-  - name: Test Local Action
-    id: test-action
-    uses: ./
-    with:
-      milliseconds: 1000
-
-  - name: Print Output
-    id: output
-    run: echo "${{ steps.test-action.outputs.time }}"
-```
-
-For example workflow runs, check out the
-[Actions tab](https://github.com/actions/typescript-action/actions)! :rocket:
+*(Note: For the moment, [it is only possible to publish to `npm` registries](https://github.com/d3p1/semantic-release-action/issues/7))*
 
 ## Usage
 
-After testing, you can create version tag(s) that developers can use to
-reference different stable versions of your action. For more information, see
-[Versioning](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
-in the GitHub Actions toolkit.
-
-To include the action in a workflow in another repository, you can use the
-`uses` syntax with the `@` symbol to reference a specific branch, tag, or commit
-hash.
+See [`action.yml`](action.yml)
 
 ```yaml
-steps:
-  - name: Checkout
-    id: checkout
-    uses: actions/checkout@v3
+- uses: d3p1/releasify@v1
+  with:
+    ##
+    # @note The branch on which release should happen
+    # @link https://semantic-release.gitbook.io/semantic-release/usage/configuration#branches
+    ##
+    branch: ''
 
-  - name: Test Local Action
-    id: test-action
-    uses: actions/typescript-action@v1 # Commit with the `v1` tag
-    with:
-      milliseconds: 1000
-
-  - name: Print Output
-    id: output
-    run: echo "${{ steps.test-action.outputs.time }}"
+    ##
+    # @note The Git tag format used by semantic-release to identify releases
+    # @link https://semantic-release.gitbook.io/semantic-release/usage/configuration#tagformat
+    ##
+    tag-format: ''
 ```
+
+**Basic:**
+
+```yaml
+jobs:
+  test-action:
+    name   : Test
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents     : write 
+      issues       : write 
+      pull-requests: write 
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - uses: d3p1/releasify@v1
+```
+
+The `branch` and `tag-format` inputs are optional. If not supplied, the targeted branch and [`${version}` format](https://lodash.com/docs#template) will be used, respectively.
+
+It is necessary to set the described [`permissions`](https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs), so the bot can execute the following actions:
+
+- `contents: write`: Publish a release 
+- `issues: write`: Comment on released issues  
+- `pull-requests: write`: Comment on released pull requests  
+
+Also, if you want to publish the module/package to [`npm`](https://www.npmjs.com/), it is necessary to [set `private: true` within your `package.json`](https://semantic-release.gitbook.io/semantic-release/support/faq#why-is-the-package) and to [configure the `NPM_TOKEN`](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration) as [secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions). Visit the used [`@semantic-release/npm` plugin for more information](https://github.com/semantic-release/npm).
+
+## Changelog
+
+Detailed changes for each release are documented in [`CHANGELOG.md`](./CHANGELOG.md).
+
+## License
+
+This work is published under [MIT License](license).
+
+## Author
+
+Always happy to receive a greeting on:
+
+- [LinkedIn](https://www.linkedin.com/in/cristian-marcelo-de-picciotto/) 
+- [Twitter](https://twitter.com/___d3p1)
+- [Blog](https://d3p1.dev/)
