@@ -1,8 +1,8 @@
 ##
-# @description CI
+# @description Basic validation
 # @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
 ##
-name: CI
+name: Basic validation
 
 on:
   pull_request:
