@@ -27,7 +27,7 @@ inputs:
   ##
   branch:
     description: 'The branch on which release should happen'
-    required   : true
+    required   : false
     default    : ${{ github.ref_name }}
 
   ##
@@ -36,7 +36,7 @@ inputs:
   ##
   tag-format:
     description: 'The Git tag format used by semantic-release to identify releases'
-    required   : true
+    required   : false
     default    : '${version}'
 
 ##
