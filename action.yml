@@ -6,7 +6,7 @@
 ##
 # @note Define action general information
 ##
-name       : 'Releasify'
+name       : 'Semantic Releasify'
 description: 'A GitHub Action for automated releases, changelogs, and package publishing with semantic-release'
 author     : 'Cristian Marcelo de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)'
 
