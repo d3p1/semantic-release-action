@@ -3,7 +3,6 @@
 # [RELEASIFY]
 
 [![Basic validation](https://github.com/d3p1/semantic-release-action/actions/workflows/basic-validation.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/basic-validation.yml)
-[![Linter](https://github.com/d3p1/semantic-release-action/actions/workflows/linter.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/linter.yml)
 [![CodeQL](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml)
 
 </div>
