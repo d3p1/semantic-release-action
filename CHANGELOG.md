@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/d3p1/semantic-releasify/compare/v1.1.0...v1.1.1) (2023-09-06)
+
+
+### Bug Fixes
+
+* update package/project name to semantic-releasify [[#1](https://github.com/d3p1/semantic-releasify/issues/1)] ([8db85a8](https://github.com/d3p1/semantic-releasify/commit/8db85a87932398142902da659d275990906970e6))
+
 # [1.1.0](https://github.com/d3p1/semantic-releasify/compare/v1.0.0...v1.1.0) (2023-09-05)
 
 
