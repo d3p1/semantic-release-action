@@ -4,8 +4,8 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
-[![Basic validation](https://github.com/d3p1/semantic-release-action/actions/workflows/basic-validation.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/basic-validation.yml)
-[![CodeQL](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/d3p1/semantic-release-action/actions/workflows/codeql-analysis.yml)
+[![Basic validation](https://github.com/d3p1/semantic-releasify/actions/workflows/basic-validation.yml/badge.svg)](https://github.com/d3p1/semantic-releasify/actions/workflows/basic-validation.yml)
+[![CodeQL](https://github.com/d3p1/semantic-releasify/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/d3p1/semantic-releasify/actions/workflows/codeql-analysis.yml)
 
 </div>
 
@@ -15,7 +15,7 @@ A little [GitHub Action](https://docs.github.com/en/actions) for automated relea
 
 [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/) already has a [great explained recipe to configure a GitHub Action using its library](https://semantic-release.gitbook.io/semantic-release/recipes/ci-configurations/github-actions). The idea of this [GitHub Action](https://docs.github.com/en/actions) is to ecapsulate a basic [configuration](https://semantic-release.gitbook.io/semantic-release/usage/configuration) with basic [plugins](https://semantic-release.gitbook.io/semantic-release/usage/plugins) to have a handful and easy way to generate/update the project `CHANGELOG`, dispatch a GitHub release and publish the related package.
 
-*(Note: For the moment, [it is only possible to publish to `npm` registries](https://github.com/d3p1/semantic-release-action/issues/7))*
+*(Note: For the moment, [it is only possible to publish to `npm` registries](https://github.com/d3p1/semantic-releasify/issues/7))*
 
 ## Usage
 
