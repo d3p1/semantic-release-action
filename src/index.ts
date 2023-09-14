@@ -10,6 +10,7 @@ import semanticRelease from 'semantic-release';
 
 /**
  * Action entry point
+ *
  * @returns {Promise<void>} Resolves when the action is completed
  */
 export async function run(): Promise<void> {
