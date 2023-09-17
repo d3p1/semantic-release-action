@@ -85,4 +85,4 @@ Always happy to receive a greeting on:
 
 - [LinkedIn](https://www.linkedin.com/in/cristian-marcelo-de-picciotto/) 
 - [Twitter](https://twitter.com/___d3p1)
-- [Blog](https://d3p1.dev/)
+- [Web](https://d3p1.dev/)
