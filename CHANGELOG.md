@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/d3p1/semantic-releasify/compare/v1.1.1...v1.2.0) (2023-10-18)
+
+
+### Features
+
+* add dependabot upgrade [[#1](https://github.com/d3p1/semantic-releasify/issues/1)] ([b98be59](https://github.com/d3p1/semantic-releasify/commit/b98be59b48e346f6bc67a71ada3c68f9edc40d95))
+
 ## [1.1.1](https://github.com/d3p1/semantic-releasify/compare/v1.1.0...v1.1.1) (2023-09-06)
 
 
